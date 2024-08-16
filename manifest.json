@@ -1,0 +1,10 @@
+{
+    "manifest_version": 3,
+    "name": "Radio Extension",
+    "description": "Stream Radio Stations.",
+    "version": "1.0",
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "radioIcon.png"
+    }
+}

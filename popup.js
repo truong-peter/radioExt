@@ -3,21 +3,37 @@ let audio = null;
 
 document.addEventListener('DOMContentLoaded', function () {
 
+    document.getElementById('stop').addEventListener('click', function(){
+        stopFunc(audio);
+    });
+
+    //Country
+    document.getElementById('country').addEventListener('click', function(){
+        radioStation('country');
+    });
+    document.getElementById('country2').addEventListener('click', function(){
+        radioStation('country2');
+    });
+
+
+
+    //Hip Hop
     document.getElementById('hhs').addEventListener('click', function(){
         radioStation('hhs');
     });
-
     document.getElementById('UBhh').addEventListener('click', function(){
         radioStation('UBhh');
     });
-
     document.getElementById('UBhhrb').addEventListener('click', function(){
         radioStation('UBhhrb');
     });
 
-
-    document.getElementById('stop').addEventListener('click', function(){
-        radioStation('stop');
+    //Miscellaneous
+    document.getElementById('chris').addEventListener('click', function(){
+        radioStation('chris');
+    });
+    document.getElementById('classical').addEventListener('click', function(){
+        radioStation('classical');
     });
 
 
@@ -28,12 +44,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function radioStation(choice) {
     let station;
-
-    if(choice == 'stop' && audio != null){ //audio is initialized
-        audio.pause();
-        audio = null; //reset audio back to null
+    //Country
+    if(choice == 'country') {
+        station = 'https://country.stream.laut.fm/country';
+    }
+    else if(choice == 'country2') {
+        station = 'http://bayshore-ais.leanstream.co/CFDCFM-MP3';
     }
 
+
+    //Hip Hop
+    else if(choice == 'hhs') {
+        station = 'http://stream.rtlradio.de/rnb/mp3-192/';
+    }
     else if(choice == 'UBhh') {
         station = 'http://hydra.cdnstream.com/1537_128';
     }
@@ -43,14 +66,29 @@ function radioStation(choice) {
     }
 
 
-    else if(choice == 'hhs') {
-        station = 'http://stream.rtlradio.de/rnb/mp3-192/';
+    //Mischellaneous
+    else if(choice == 'chris') {
+        station = 'https://christmasradio.christmasradiogroup.com/';
+    } 
+    else if(choice == 'classical'){
+        station = 'https://stream1.cprnetwork.org/cpr2_lo';
     }
 
+    //In the case of switching to new station during listening
+    stopFunc(audio);
 
-    if(!audio && station){
-        audio = new Audio(station); 
-        audio.play();
+
+
+    audio = new Audio(station); 
+    audio.play();
+
+}
+
+function stopFunc(audio){
+    if(audio != null){
+        audio.pause();
+        audio = null; //reset audio back to null
     }
 
+    return audio;
 }

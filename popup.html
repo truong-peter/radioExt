@@ -2,28 +2,72 @@
 <html>
 
 <head>
-    <title>US Radio Station</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+
+        button {
+            padding: 6px 6px;
+            margin: 6px 0;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
 
-<h3>Choose Station</h3>
+<h3>Radio Stations</h3>
+
+<table>
+    <tr>
+        <th>Genre</th>
+        <th>Stations</th>
+        <th><button id="stop">Stop</button></th>
+    </tr>
+
+    <tr>
+        <td>Country</td>
+
+        <td>
+            <button id="country">Country Station</button>
+            <button id="country2">Country 105</button>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Hip Hop</td>
+
+        <td>
+            <button id="hhs">HipHop & Soul</button>
+            <button id="UBhh">Urban Radio Greatest HipHop</button>
+            <button id="UBhhrb">Urban Radio HipHop & R&B</button>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Miscellaneous</td>
+
+        <td>
+            <button id="chris">Christmas Hits</button>
+            <button id="classical">Colorado Public Radio Classical</button>
+        </td>
+    </tr>
 
 
-</style>
+</table>
 
 
-<button id='hhs'>Hip Hop and Soul</button>
-<button id='UBhh'>Urban Radio Greatest Hip Hop</button>
-<button id='UBhhrb'>Urban Radio Hip Hop and R&B</button>
-
-
-<button id='stop'>Stop</button>
-
-
-
-
-<script src ="popup.js"></script>
+<script src="popup.js"></script>
 
 </body>
 

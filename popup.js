@@ -9,31 +9,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //Country
     document.getElementById('country').addEventListener('click', function(){
-        radioStation('country');
+        radioStation('https://country.stream.laut.fm/country');
     });
     document.getElementById('country2').addEventListener('click', function(){
-        radioStation('country2');
+        radioStation('http://bayshore-ais.leanstream.co/CFDCFM-MP3');
     });
 
 
 
     //Hip Hop
     document.getElementById('hhs').addEventListener('click', function(){
-        radioStation('hhs');
+        radioStation('http://stream.rtlradio.de/rnb/mp3-192/');
     });
     document.getElementById('UBhh').addEventListener('click', function(){
-        radioStation('UBhh');
+        radioStation('http://hydra.cdnstream.com/1537_128');
     });
     document.getElementById('UBhhrb').addEventListener('click', function(){
-        radioStation('UBhhrb');
+        radioStation('http://hydra.cdnstream.com/1536_128');
     });
 
     //Miscellaneous
     document.getElementById('chris').addEventListener('click', function(){
-        radioStation('chris');
+        radioStation('https://christmasradio.christmasradiogroup.com/');
     });
     document.getElementById('classical').addEventListener('click', function(){
-        radioStation('classical');
+        radioStation('https://stream1.cprnetwork.org/cpr2_lo');
     });
 
 
@@ -43,42 +43,13 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function radioStation(choice) {
-    let station;
-    //Country
-    if(choice == 'country') {
-        station = 'https://country.stream.laut.fm/country';
-    }
-    else if(choice == 'country2') {
-        station = 'http://bayshore-ais.leanstream.co/CFDCFM-MP3';
-    }
-
-
-    //Hip Hop
-    else if(choice == 'hhs') {
-        station = 'http://stream.rtlradio.de/rnb/mp3-192/';
-    }
-    else if(choice == 'UBhh') {
-        station = 'http://hydra.cdnstream.com/1537_128';
-    }
-
-    else if(choice == 'UBhhrb') {
-        station = 'http://hydra.cdnstream.com/1536_128';
-    }
-
-
-    //Mischellaneous
-    else if(choice == 'chris') {
-        station = 'https://christmasradio.christmasradiogroup.com/';
-    } 
-    else if(choice == 'classical'){
-        station = 'https://stream1.cprnetwork.org/cpr2_lo';
-    }
+    let station = choice;
 
     //In the case of switching to new station during listening
     stopFunc(audio);
 
 
-
+    
     audio = new Audio(station); 
     audio.play();
 
